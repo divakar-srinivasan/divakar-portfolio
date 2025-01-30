@@ -20,13 +20,9 @@ const About = React.forwardRef((props, ref) => {
         />
         <div className="myprofile-intro">
           <p>
-            👋Hello,I am Divakar S a dedicated Information Technology🎓
-            student currently pursuing my Bachelor of Technology degree in Kongu Engineering College
-            Erode. Passionate about creating visually
-            appealing and user-friendly web experiences, I aspire to kickstart
-            my career as a front-end developer. 💻. I'm eager to apply my skills
-            and knowledge as a trainee in a forward-thinking company where I can
-            contribute to exciting projects and grow as a developer.
+          I am a Full Stack Developer passionate about building scalable, user-friendly web applications. Proficient in MERN (MongoDB, Express.js, React.js, Node.js) and MEAN (MongoDB, Express.js, Angular, Node.js) stacks, I excel in creating dynamic solutions that enhance user experiences. With experience in React.js, Angular, Node.js, and MongoDB, I develop innovative digital platforms to solve real-world problems.
+
+I have a strong interest in cloud computing (AWS), database management, UI/UX design, and DevOps practices. My background includes internships where I developed responsive web applications using React, Tailwind CSS, and GSAP. I am dedicated to continuous learning and staying ahead in the field.
           </p>
         </div>
       </div>
@@ -41,7 +37,7 @@ const About = React.forwardRef((props, ref) => {
           className={`projects-card ${activeTab === 'teamProjects' ? 'active' : ''}`}
           onClick={() => setActiveTab('teamProjects')}
         >
-          2+ Team Projects
+          4+ Team Projects
         </button>
         <button
           className={`projects-card ${activeTab === 'realTimeProjects' ? 'active' : ''}`}
@@ -55,13 +51,15 @@ const About = React.forwardRef((props, ref) => {
         <div className="about-skills-container">
         <div className="about-skills-list">
           <ul>
-            <li>Problem Solving</li>
+            <li>Employee Management System</li>
+            <li>Bill Calculator</li>
 
           </ul>
         </div>
         <div className="about-skills-list">
           <ul>
-            <li>Adaptability</li>
+            <li>Student management System</li>
+            <li>IPL Auction</li>
 
           </ul>
         </div>
@@ -71,15 +69,15 @@ const About = React.forwardRef((props, ref) => {
         <div className="about-skills-container">
         <div className="about-skills-list">
           <ul>
-            <li>Problem Solving</li>
-            <li>Time management</li>
+            <li>Freelancer - TalentCraft  </li>
+            <li>Dr.Care - Online Doctor Appointment Booking System  (MEAN)  </li>
            
           </ul>
         </div>
         <div className="about-skills-list">
           <ul>
-            <li>Adaptability</li>
-            <li>Team Leadership</li>
+            <li>Fit-Check-Fitness Tracking System (MERN)</li>
+            <li> E-commerce Application (MEVN)</li>
             
           </ul>
         </div>
@@ -89,16 +87,14 @@ const About = React.forwardRef((props, ref) => {
         <div className="about-skills-container">
         <div className="about-skills-list">
           <ul>
-            <li>Problem Solving</li>
-            <li>Time management</li>
-            <li>Communication</li>
+            <li>Eventix - Event Booking System (MERN)</li>
+
           </ul>
         </div>
         <div className="about-skills-list">
           <ul>
-            <li>Adaptability</li>
-            <li>Team Leadership</li>
-            <li>Team worker</li>
+            <li>Builder Portfolio for KK construction</li>
+
           </ul>
         </div>
       </div>

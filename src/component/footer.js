@@ -6,13 +6,6 @@ const Footer = React.forwardRef((props, ref) => {
     <footer className="footer" ref={ref}>
       <div className="footer-content">
         <h3>sdivakar2005</h3>
-        <nav className="footer-nav">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-        </nav>
         <div className="footer-icons">
           <a
             href="https://www.linkedin.com/in/divakar-s-98b4442b8/"
@@ -29,14 +22,14 @@ const Footer = React.forwardRef((props, ref) => {
             <i className="fab fa-github"></i>
           </a>
           <a
-            href="https://www.facebook.com"
+            href="https://leetcode.com/u/DIVAKAR_S/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fab fa-facebook"></i>
+            <i class="fa-solid fa-code"></i>
           </a>
         </div>
-        <p>© 2024 Divakar S. All rights reserved.</p>
+        <p>© 2025 Divakar S. All rights reserved.</p>
       </div>
     </footer>
   );

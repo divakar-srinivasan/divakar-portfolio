@@ -16,7 +16,7 @@ const Navbar = ({ sections }) => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <span style={{ color: "#64ffda" }}>D</span>ivakar
+        <span style={{ color: "#64ffda" }}>D</span>ivakar  S
       </div>
       <div className="navbar-menu">
         <div

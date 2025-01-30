@@ -22,13 +22,15 @@
 .skill-item {
   background: #fff;
   border-radius: 15px;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   height: 180px;
   width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; /* Stack the image and name vertically */
+  text-align: center; /* Align text centrally */
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; /* Needed for positioning the name */
 }
 
 .skill-item:hover {
@@ -41,11 +43,17 @@
   height: 80px;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 60px;
-  padding: 20px;
+.skill-item p {
+  margin-top: 10px; /* Space between image and text */
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+  opacity: 0; /* Hide the text initially */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.skill-item:hover p {
+  opacity: 1; /* Show the name on hover */
 }
 
 @media (max-width: 1024px) {
@@ -71,6 +79,3 @@
     grid-template-columns: repeat(1, 1fr); /* Single column for very small screens */
   }
 }
-
-
-

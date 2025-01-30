@@ -1,61 +1,79 @@
 .tools-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
-  }
+  display: flex;
+  padding: 9%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: black;
+}
 
-  .tools-container h1 {
-    font-size: 3rem;
-    color: orangered;
-  }
-  
+.tools-container h1 {
+  font-size: 3rem;
+  color: orangered;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Adjust based on your design */
+  gap: 40px;
+  padding: 20px;
+}
+
+.tool-item {
+  background: #fff;
+  border-radius: 15px;
+  height: 180px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Required for absolute positioning of text */
+  overflow: hidden; /* Ensures that the name does not overflow out of the box */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tool-item img {
+  width: 120px;
+  height: 120px;
+}
+
+.tool-item p {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  opacity: 0; /* Hide the text initially */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tool-item:hover p {
+  opacity: 1; /* Show the text on hover */
+}
+
+@media (max-width: 1024px) {
   .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Adjust based on your design */
-    gap: 40px;
-    padding: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Adjust number of columns for medium screens */
   }
-  
-  .tool-item {
-    background: #fff;
-    border-radius: 15px;
-    height: 180px;
-    width: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust number of columns for smaller screens */
   }
-  
-  .tool-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 480px) {
+  .tools-grid {
+    grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
   }
-  
-  .tool-item img {
-    width: 120px;
-    height: 120px;
-  }
-  
-  @media (max-width: 1024px) {
-    .tools-grid {
-      grid-template-columns: repeat(3, 1fr); /* Adjust number of columns for medium screens */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .tools-grid {
-      grid-template-columns: repeat(2, 1fr); /* Adjust number of columns for smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .tools-grid {
-      grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
-    }
-  }
-  
+}

@@ -12,18 +12,16 @@ const Home = React.forwardRef((props, ref) => {
           <Typewriter
             className="ddd"
             options={{
-              strings: ["Divakar S", "Welcomes You"],
+              strings: ["Divakar S", "Full stack Developer"],
               autoStart: true,
               loop: true,
             }}
           />
         </div>
-        <h2 className="description">I build things for the web.</h2>
-        <p className="details">
-          I'm a software engineer specializing in building and occasionally
-          designing exceptional digital experiences. Currently, I'm focused on
-          building accessible, human-centered products on my website.
-        </p>
+<p className="details">
+Ambitious Full Stack Developer with comprehensive experience in the MERN and MEAN stacks. Adept at crafting scalable, high-performance web applications, and passionate about driving innovation in team environments. Committed to enhancing user experiences through cutting-edge technologies and delivering robust, efficient solutions. Skilled in DevOps practices, ensuring seamless integration, continuous deployment, and efficient collaboration between development and operations teams.
+</p>
+
         <div className="social-links">
           <a
             href="https://github.com/divakar-srinivasan/"
