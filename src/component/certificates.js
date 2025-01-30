@@ -22,6 +22,8 @@ import i15 from "../Images/certificates/i15.png";
 import i16 from "../Images/certificates/i16.png";
 import i17 from "../Images/certificates/i17.png";
 import i18 from "../Images/certificates/i18.png";
+import i19 from "../Images/certificates/i19.jpg";
+import i20 from "../Images/certificates/i20.jpg";
 
 const certificates = [
   { imgUrl: i1 },
@@ -42,6 +44,8 @@ const certificates = [
   { imgUrl: i16 },
   { imgUrl: i17 },
   { imgUrl: i18 },
+  { imgUrl: i19 },
+  { imgUrl: i20 },
 ];
 
 const Certificates = React.forwardRef((props, ref) => {
@@ -63,7 +67,7 @@ const Certificates = React.forwardRef((props, ref) => {
 
   return (
     <div className="project-container" ref={ref}>
-      <h1>Certificates</h1>
+      <h1 className="header">Certificates</h1>
       <div className="carousel-container" data-aos="zoom-in">
         <button className="arrow left-arrow" onClick={prevSlide}>
           <FaArrowLeft />

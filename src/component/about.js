@@ -6,7 +6,7 @@ const About = React.forwardRef((props, ref) => {
   const [activeTab, setActiveTab] = useState('miniProjects');
   const handleDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/1Sc-p-3AhIdXl0axPv3JVFf4El1xeNv9t/view?usp=sharing"
+      "https://drive.google.com/file/d/18GbpH_EgOE4CybryaAvBNpiz8B5-LJeU/view?usp=sharing"
     );
   };
   return (
@@ -102,7 +102,7 @@ I have a strong interest in cloud computing (AWS), database management, UI/UX de
 
 
       <button onClick={handleDownload} className="resume-button">
-        Resume
+        Academics
       </button>
     </div>
   );

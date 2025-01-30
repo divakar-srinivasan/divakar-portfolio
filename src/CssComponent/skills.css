@@ -7,7 +7,9 @@
   height: 100vh;
   background-color: black;
 }
-
+.header{
+  padding: 5%;
+}
 .skills-container h1 {
   font-size: 3rem;
   color: orangered;

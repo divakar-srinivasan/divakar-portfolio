@@ -1,8 +1,9 @@
 .carousel-container {
   display: flex;
+  padding-top: 10%;padding-bottom: 10%;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: auto;
   width: 100%;
   background-color: black;
   color: #fff;
@@ -10,7 +11,9 @@
 .project-container{
   background-color: black;
 }
-
+.header{
+  padding: 5%;
+}
 .project-container h1{
   font-size: 2.5rem; /* Adjust size as needed */
   font-weight: bold;
@@ -34,7 +37,7 @@
   overflow: hidden;
   margin: 10px;
   width: 400px;
-  height: 400px; /* Adjust height as needed */
+  height: 500px; /* Adjust height as needed */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
   display: flex;

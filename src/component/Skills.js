@@ -31,7 +31,7 @@ const Skills = React.forwardRef((props, ref) => {
 
   return (
     <div className="skills-container" ref={ref}>
-      <h1>Skills</h1>
+      <h1 className="header">Skills</h1>
       <div className="skills-grid" data-aos="fade-right">
         {skills.map((item, index) => (
           <div key={index} className="skill-item">
