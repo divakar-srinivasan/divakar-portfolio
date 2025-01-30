@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+.navbar {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #0a192f;
+    position: -webkit-sticky; /* For older Safari/iOS support */
+    position: sticky; 
+    top: 0;
+
+    z-index: 2;
+
+}
+
+.navbar-logo {
+    color: #ccd6f6;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 5%;
+}
+
+.navbar-item {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    /* Ensure transition applies to background-color, color, and font-size */
+}
+
+.navbar-item:hover {
+    color: #22ff00;
+    font-size: 20px;
+}
+
+
+.button {
+    background-color: #64ffda;
+    border: none;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0ce061;
+    color: #000000;
+    box-shadow: 0 4px 10    px rgba(203, 255, 17, 0.866);
+    font-size: 17px;
+    border: 2px solid #4CAF50;
+    transform: scale(1.0);
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-item {
+        padding: 10px 0;
+    }
+}

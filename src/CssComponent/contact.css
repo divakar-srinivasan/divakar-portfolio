@@ -1,0 +1,79 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    /* background-color: #f7f7f7; */
+    height: 90vh;
+    background-color: black;
+
+}
+
+.contact-title {
+    font-size: 3rem;
+    color: #64ffda;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.5s;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.contact-detail {
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-link:hover .contact-icon {
+    color: #4078c0;
+    /* Change the color on hover */
+}
+
+.contact-link:hover .contact-text,
+.contact-link:hover .contact-detail {
+    color: #4078c0;
+    /* Change the text color on hover */
+}

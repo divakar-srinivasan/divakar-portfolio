@@ -1,0 +1,55 @@
+.footer {
+    background-color: #0b0c10;
+    color: #66fcf1;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .footer-nav {
+    margin-bottom: 15px;
+  }
+  
+  .footer-nav a {
+    color: #66fcf1;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-nav a:hover {
+    color: #45a29e;
+  }
+  
+  .footer-icons {
+    margin-bottom: 15px;
+  }
+  
+  .footer-icons a {
+    color: #66fcf1;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s;
+  }
+  
+  .footer-icons a:hover {
+    color: #45a29e;
+  }
+  
+  .footer p {
+    font-size: 0.9em;
+    color: #c5c6c7;
+  }
+  
+  /* Adding FontAwesome for icons */
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+  

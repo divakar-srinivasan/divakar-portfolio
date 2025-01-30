@@ -1,0 +1,161 @@
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+}
+.project-container{
+  background-color: black;
+}
+
+.project-container h1{
+  font-size: 2.5rem; /* Adjust size as needed */
+  font-weight: bold;
+  color:#64ffda; /* Dark color for text */
+  text-align: center; /* Center align the text */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Spacing between letters */
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  overflow: hidden;
+  width: 90%; /* Adjust based on your card width and the number of visible cards */
+}
+.card {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  width: 400px;
+  height: 400px; /* Adjust height as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+  transform: translateY(-15px);
+}
+.view-code-button,
+.open-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-code-button {
+  background-color: #333;
+  color: white;
+}
+
+.view-code-button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.view-code-button:active {
+  background-color: #222;
+  transform: scale(0.98);
+}
+
+.open-button {
+  background-color: #00bcd4;
+  color: white;
+  margin-left: 10px;
+}
+
+.open-button:hover {
+  background-color: #0097a7;
+  transform: scale(1.05);
+}
+
+.open-button:active {
+  background-color: #00796b;
+  transform: scale(0.98);
+}
+
+.card-content {
+  padding: 20px;
+  overflow-y: auto; /* Enables vertical scrolling */
+  flex-grow: 1; /* Allows the content to grow and fill the card */
+}
+
+.card-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit (Chrome, Safari, etc.) */
+}
+.card-content h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+}
+
+.card-content .date {
+  font-size: 0.9em;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1em;
+  margin: 0 0 20px;
+}
+
+.view-code {
+  color: #9b59b6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.view-code:hover {
+  text-decoration: underline;
+}
+.arrow {
+  background-color: #444;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.arrow:hover {
+  background-color: #666;
+  transform: scale(1.1);
+}
+
+.left-arrow {
+  position: absolute;
+  left: 20px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 20px;
+}

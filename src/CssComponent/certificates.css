@@ -1,0 +1,86 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+  }
+  .project-container{
+    background-color: black;
+  }
+  
+  .project-container h1{
+    font-size: 2.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    color:#64ffda; /* Dark color for text */
+    text-align: center; /* Center align the text */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Spacing between letters */
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    overflow: hidden;
+    width: 90%; /* Adjust based on your certify-card width and the number of visible certify-cards */
+  }
+  .certify-card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    width: 600px;
+    height: 400px; /* Adjust height as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+  }
+  .certify-card:hover{
+    transform: translateY(-15px);
+  }
+
+  
+  .certify-card-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  .arrow {
+    background-color: #444;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .arrow:hover {
+    background-color: #666;
+    transform: scale(1.1);
+  }
+  
+  .left-arrow {
+    position: absolute;
+    left: 20px;
+  }
+  
+  .right-arrow {
+    position: absolute;
+    right: 20px;
+  }
+  
