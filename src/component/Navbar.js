@@ -9,7 +9,7 @@ const Navbar = ({ sections }) => {
 
   const handleDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/11sqF78adatjeDjoGxseu9VnUSwycDUsD/view?usp=sharing"
+      "https://drive.google.com/file/d/1Sc-p-3AhIdXl0axPv3JVFf4El1xeNv9t/view?usp=sharing"
     );
   };
 
