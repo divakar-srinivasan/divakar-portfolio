@@ -1,83 +1,169 @@
 .skills-container {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: black;
-}
-.header{
-  padding: 5%;
-}
-.skills-container h1 {
-  font-size: 3rem;
-  color: orangered;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
+/* Enhanced Header */
+.header {
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: orangered;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
+
+  /* New additions */
+  background: linear-gradient(to right, #FFC107, #FF9800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #FFC107, #FF9800);
+    margin-top: 10px;
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+/* Adding animation to header */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 40px;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 20px;
 }
 
+/* Updated Skill Item */
 .skill-item {
-  background: #fff;
+  background: linear-gradient(135deg, #fff, #f5f5f5);
   border-radius: 15px;
   height: 180px;
   width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Stack the image and name vertically */
-  text-align: center; /* Align text centrally */
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative; /* Needed for positioning the name */
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 .skill-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Image inside skill item */
 .skill-item img {
   width: 80px;
   height: 80px;
+  transition: transform 0.3s ease;
 }
 
+.skill-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Skill Name */
 .skill-item p {
-  margin-top: 10px; /* Space between image and text */
-  color: #333;
+  margin-top: 10px;
+  color: #d60c0c; /* Red color for fire */
   font-weight: bold;
   font-size: 1rem;
-  opacity: 0; /* Hide the text initially */
-  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease, color 0.3s ease;
+  animation: fireAnimation 1s infinite alternate;
 }
 
 .skill-item:hover p {
-  opacity: 1; /* Show the name on hover */
+  opacity: 1;
+  transform: translateY(-5px);
 }
 
+@keyframes fireAnimation {
+  0% {
+    color: #9d0909; /* Dark red */
+    text-shadow: 0 0 5px #d60c0c, 0 0 10px #d60c0c, 0 0 15px #ff6600, 0 0 20px #ff6600;
+  }
+  50% {
+    color: #ff6600; /* Orange-red */
+    text-shadow: 0 0 5px #ff6600, 0 0 10px #ff6600, 0 0 15px #ffcc00, 0 0 20px #ffcc00;
+  }
+  100% {
+    color: #997e10; /* Yellow */
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ff3300, 0 0 20px #ff3300;
+  }
+}
+
+
+/* Responsive Grid */
 @media (max-width: 1024px) {
   .skills-grid {
-    grid-template-columns: repeat(4, 1fr); /* Adjust number of columns for medium screens */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
   }
 }
 
 @media (max-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr); /* Adjust number of columns for smaller screens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
   }
 }
 
 @media (max-width: 600px) {
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* Adjust number of columns for small screens */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
 @media (max-width: 400px) {
   .skills-grid {
-    grid-template-columns: repeat(1, 1fr); /* Single column for very small screens */
+    grid-template-columns: repeat(1, 1fr);
   }
 }

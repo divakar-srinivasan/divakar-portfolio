@@ -5,7 +5,7 @@ const Footer = React.forwardRef((props, ref) => {
   return (
     <footer className="footer" ref={ref}>
       <div className="footer-content">
-        <h3>sdivakar2005</h3>
+        <h3 className="lightning">Made with DIVAKAR S</h3>
         <div className="footer-icons">
           <a
             href="https://www.linkedin.com/in/divakar-s-98b4442b8/"

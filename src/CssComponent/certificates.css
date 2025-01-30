@@ -84,3 +84,18 @@
     right: 20px;
   }
   
+  .neon {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff0080, 0 0 80px #ff0080, 0 0 90px #ff0080;
+    transition: text-shadow 0.3s ease;
+  }
+  
+  .neon:hover p {
+    text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 40px #ff0080, 0 0 80px #ff0080, 0 0 90px #ff0080;
+  }
+  

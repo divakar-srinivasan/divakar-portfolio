@@ -13,8 +13,62 @@
 .myprofile-container h1 {
     padding-left: 20px;
     font-size: 3rem;
-    color: orangered;
 }
+
+.about-header {
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: orangered;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-in-out;
+  
+    /* New additions */
+    background: linear-gradient(to right, #ff7b07, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+  
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #ffea07, #FF9800);
+      margin-top: 10px;
+      animation: pulse 2s infinite;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+  }
+  
+  /* Adding animation to header */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 .myprofile-header {
     display: flex;

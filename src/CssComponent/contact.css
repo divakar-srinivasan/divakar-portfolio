@@ -25,7 +25,8 @@
 }
 
 .contact-card {
-    background: white;
+    background: linear-gradient(135deg, #ff99cc, #ffe6f2, #ffd7be, #ffc5c5);
+    background-size: 300% 300%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -37,13 +38,23 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background 0.7s ease-in-out;
 }
 
 .contact-card:hover {
-    transform: translateY(-10px);
-    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
+    transform: translateY(-15px);
+    box-shadow: 0 12px 20px rgba(255, 123, 211, 0.2);
+    background: linear-gradient(135deg, #ff99cc, #ffe6f2, #ffd7be, #ffc5c5);
+    background-size: 300% 300%;
+    animation: gradient-flow 3s infinite;
 }
+
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 .contact-icon {
     font-size: 3rem;

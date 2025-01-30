@@ -67,7 +67,7 @@ const Certificates = React.forwardRef((props, ref) => {
 
   return (
     <div className="project-container" ref={ref}>
-      <h1 className="header">Certificates</h1>
+      <h1 className="neon">Certificates</h1>
       <div className="carousel-container" data-aos="zoom-in">
         <button className="arrow left-arrow" onClick={prevSlide}>
           <FaArrowLeft />

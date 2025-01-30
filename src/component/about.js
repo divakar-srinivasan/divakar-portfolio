@@ -11,7 +11,7 @@ const About = React.forwardRef((props, ref) => {
   };
   return (
     <div className="myprofile-container" ref={ref}>
-      <h1>About me</h1>
+      <h1 className="about-header">About me</h1>
       <div className="myprofile-header">
         <img
           src={img} // Replace with the correct path to your image

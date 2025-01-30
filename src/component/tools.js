@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import git from "../Images/tools/git.png";
 import aws from "../Images/tools/aws.png";
 import Kubernetes from "../Images/tools/net.png";
@@ -14,6 +15,20 @@ import ansible from "../Images/tools/ansible.png";
 import "../CssComponent/tool.css";
 
 const Tools = React.forwardRef((props, ref) => {
+  const toolsRef = useRef([]);
+
+  useEffect(() => {
+    toolsRef.current.forEach((el, index) => {
+      gsap.to(el, {
+        y: "+=15",
+        repeat: -1,
+        yoyo: true,
+        duration: 1.5 + index * 0.2,
+        ease: "sine.inOut",
+      });
+    });
+  }, []);
+
   const tools = [
     { img: vscode, alt: "VS Code", name: "VS Code" },
     { img: ide, alt: "Spring Tool Suite", name: "Spring Tool Suite" },
@@ -31,12 +46,16 @@ const Tools = React.forwardRef((props, ref) => {
 
   return (
     <div className="tools-container" ref={ref}>
-      <h1>Tools</h1>
+      <h1 className="header">Tools</h1>
       <div className="tools-grid" data-aos="flip-up">
         {tools.map((item, index) => (
-          <div key={index} className="tool-item">
-            <img src={item.img} alt={item.alt} />
-            <p>{item.name}</p> {/* Add the name below the image */}
+          <div
+            key={index}
+            className="tool-item"
+            ref={(el) => (toolsRef.current[index] = el)}
+          >
+            <img src={item.img} alt={item.alt} className="floating" />
+            <p>{item.name}</p>
           </div>
         ))}
       </div>

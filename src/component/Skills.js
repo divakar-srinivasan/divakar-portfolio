@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import html5 from "../Images/skills/html.png";
 import css from "../Images/skills/css.png";
 import react from "../Images/skills/react.png";
@@ -14,6 +15,20 @@ import aws from "../Images/skills/aws.png";
 import "../CssComponent/skills.css";
 
 const Skills = React.forwardRef((props, ref) => {
+  const skillsRef = useRef([]);
+
+  useEffect(() => {
+    skillsRef.current.forEach((el, index) => {
+      gsap.to(el, {
+        y: "+=15",
+        repeat: -1,
+        yoyo: true,
+        duration: 1.5 + index * 0.2,
+        ease: "sine.inOut",
+      });
+    });
+  }, []);
+
   const skills = [
     { img: html5, alt: "HTML", name: "HTML" },
     { img: css, alt: "CSS", name: "CSS" },
@@ -34,9 +49,13 @@ const Skills = React.forwardRef((props, ref) => {
       <h1 className="header">Skills</h1>
       <div className="skills-grid" data-aos="fade-right">
         {skills.map((item, index) => (
-          <div key={index} className="skill-item">
-            <img src={item.img} alt={item.alt} />
-            <p>{item.name}</p> {/* Display the name below the image */}
+          <div
+            key={index}
+            className="skill-item"
+            ref={(el) => (skillsRef.current[index] = el)}
+          >
+            <img src={item.img} alt={item.alt} className="floating" />
+            <p>{item.name}</p>
           </div>
         ))}
       </div>

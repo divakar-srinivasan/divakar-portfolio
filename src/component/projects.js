@@ -65,12 +65,12 @@ const Project = React.forwardRef((props, ref) => {
 
   return (
     <div className="project-container" ref={ref}>
-      <h1 className="header">Projects</h1>
+      <h1 className="neon">Projects</h1>
       <div className="carousel-container" data-aos="zoom-in">
         <button className="arrow left-arrow" onClick={prevSlide}>
           <FaArrowLeft />
         </button>
-        <div className="carousel">
+        <di v className="carousel">
           {projects
             .slice(currentIndex, currentIndex + 3)
             .map((project, index) => (
@@ -91,7 +91,7 @@ const Project = React.forwardRef((props, ref) => {
                 </div>
               </div>
             ))}
-        </div>
+        </di>
         <button className="arrow right-arrow" onClick={nextSlide}>
           <FaArrowRight />
         </button>

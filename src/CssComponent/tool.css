@@ -1,79 +1,135 @@
 .tools-container {
   display: flex;
-  padding: 9%;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto;
-  background-color: black;
-}
-
-.tools-container h1 {
-  font-size: 3rem;
-  color: orangered;
-}
-
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Adjust based on your design */
-  gap: 40px;
+  min-height: 100vh;
+  background: black;
+  color: white;
+  text-align: center;
   padding: 20px;
 }
 
+.header {
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: orangered;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation for the header */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Tools Grid */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 40px;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+/* Updated Tool Item */
 .tool-item {
-  background: #fff;
+  background: linear-gradient(135deg, #fff, #f5f5f5);
   border-radius: 15px;
   height: 180px;
   width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Required for absolute positioning of text */
-  overflow: hidden; /* Ensures that the name does not overflow out of the box */
-  transition: transform 0.3s, box-shadow 0.3s;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 .tool-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Image inside tool item */
 .tool-item img {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease;
 }
 
+.tool-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Tool Name (Hidden by default, shown on hover) */
 .tool-item p {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: black;
+  margin-top: 10px;
+  color: #d60c0c; /* Red color for fire */
   font-weight: bold;
   font-size: 1rem;
-  opacity: 0; /* Hide the text initially */
-  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease, color 0.3s ease;
+  animation: fireAnimation 1s infinite alternate;
 }
 
 .tool-item:hover p {
-  opacity: 1; /* Show the text on hover */
+  opacity: 1;
+  transform: translateY(-5px);
 }
 
+@keyframes fireAnimation {
+  0% {
+    color: #9d0909; /* Dark red */
+    text-shadow: 0 0 5px #d60c0c, 0 0 10px #d60c0c, 0 0 15px #ff6600, 0 0 20px #ff6600;
+  }
+  50% {
+    color: #ff6600; /* Orange-red */
+    text-shadow: 0 0 5px #ff6600, 0 0 10px #ff6600, 0 0 15px #ffcc00, 0 0 20px #ffcc00;
+  }
+  100% {
+    color: #997e10; /* Yellow */
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ff3300, 0 0 20px #ff3300;
+  }
+}
+
+/* Responsive Grid */
 @media (max-width: 1024px) {
   .tools-grid {
-    grid-template-columns: repeat(3, 1fr); /* Adjust number of columns for medium screens */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
   }
 }
 
 @media (max-width: 768px) {
   .tools-grid {
-    grid-template-columns: repeat(2, 1fr); /* Adjust number of columns for smaller screens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .tools-grid {
-    grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tools-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
