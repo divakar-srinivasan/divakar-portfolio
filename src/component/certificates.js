@@ -1,9 +1,7 @@
 import "../CssComponent/certificates.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import "aos/dist/aos.css";
 
-// Import all images
 import i1 from "../Images/certificates/i1.png";
 import i2 from "../Images/certificates/i2.png";
 import i3 from "../Images/certificates/i3.png";
@@ -24,45 +22,46 @@ import i17 from "../Images/certificates/i17.png";
 import i18 from "../Images/certificates/i18.png";
 import i19 from "../Images/certificates/i19.jpg";
 import i20 from "../Images/certificates/i20.jpg";
+import i21 from "../Images/certificates/i21.jpg";
+import i22 from "../Images/certificates/i22.jpg";
+import i23 from "../Images/certificates/i23.jpg";
 
 const certificates = [
-  { imgUrl: i1 },
-  { imgUrl: i2 },
-  { imgUrl: i3 },
-  { imgUrl: i4 },
-  { imgUrl: i5 },
-  { imgUrl: i6 },
-  { imgUrl: i7 },
-  { imgUrl: i8 },
-  { imgUrl: i9 },
-  { imgUrl: i10 },
-  { imgUrl: i11 },
-  { imgUrl: i12 },
-  { imgUrl: i13 },
-  { imgUrl: i14 },
-  { imgUrl: i15 },
-  { imgUrl: i16 },
-  { imgUrl: i17 },
-  { imgUrl: i18 },
-  { imgUrl: i19 },
-  { imgUrl: i20 },
+  i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22, i23,
 ];
 
 const Certificates = React.forwardRef((props, ref) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
-  const slidesToShow = 3; // Number of slides to show at a time
-  
+  const slidesToShow = 3;
+
+  // Auto slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? certificates.length - slidesToShow : prevIndex - 1
+      prevIndex === 0 ? certificates.length - 1 : prevIndex - 1
     );
   };
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === certificates.length - slidesToShow ? 0 : prevIndex + 1
+      prevIndex === certificates.length - 1 ? 0 : prevIndex + 1
     );
+  };
+
+  const getVisibleCertificates = () => {
+    const visibleCertificates = [];
+    for (let i = 0; i < slidesToShow; i++) {
+      const index = (currentIndex + i) % certificates.length;
+      visibleCertificates.push(certificates[index]);
+    }
+    return visibleCertificates;
   };
 
   return (
@@ -73,16 +72,14 @@ const Certificates = React.forwardRef((props, ref) => {
           <FaArrowLeft />
         </button>
         <div className="carousel">
-          {certificates
-            .slice(currentIndex, currentIndex + slidesToShow)
-            .map((certificate, index) => (
-              <div key={index} className="certify-card">
-                <div
-                  className="certify-card-image"
-                  style={{ backgroundImage: `url(${certificate.imgUrl})` }}
-                ></div>
-              </div>
-            ))}
+          {getVisibleCertificates().map((imgUrl, index) => (
+            <div key={index} className="certify-card">
+              <div
+                className="certify-card-image"
+                style={{ backgroundImage: `url(${imgUrl})` }}
+              ></div>
+            </div>
+          ))}
         </div>
         <button className="arrow right-arrow" onClick={nextSlide}>
           <FaArrowRight />
